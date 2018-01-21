@@ -17,7 +17,7 @@
 // Package passwd provides tools and utilities for entering, checking and
 // changing passwords on the command line (without echoing back to the
 // terminal)
-package passwd
+package passwd // import "toolman.org/security/tools/passwd"
 
 import (
 	"errors"
