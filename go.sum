@@ -1,7 +1,10 @@
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793 h1:u+LnwYTOOW7Ukr/fppxEb1Nwz0AtPflrblfvUudpo+I=
 golang.org/x/crypto v0.0.0-20180904163835-0709b304e793/go.mod h1:6SG95UA2DQfeDnfUPMdvaQW0Q7yPrPDi9nlGo2tz2b4=
+golang.org/x/crypto v0.8.0 h1:pd9TJtTueMTVQXzk8E2XESSMQDj/U7OUu0PqJqPXQjQ=
+golang.org/x/crypto v0.8.0/go.mod h1:mRqEX+O9/h5TFCrQhkgjo2yKi0yYA+9ecGkdQoHrywE=
 golang.org/x/sys v0.0.0-20180907202204-917fdcba135d h1:kWn1hlsqeUrk6JsLJO0ZFyz9bMg8u85voZlIuc68ZU4=
 golang.org/x/sys v0.0.0-20180907202204-917fdcba135d/go.mod h1:STP8DvDyc/dI5b8T5hshtkjS+E42TnysNCUPdjciGhY=
+golang.org/x/sys v0.7.0/go.mod h1:oPkhp1MJrh7nUepCBck5+mAzfO9JrbApNNgaTdGDITg=
 toolman.org/time/timetool v0.0.0-20180827143202-c2750d4cbd69 h1:oK1XCkBkidK8XyWdmoTaZDhBsb0iTjuhliN9nN8dtF8=
 toolman.org/time/timetool v0.0.0-20180827143202-c2750d4cbd69/go.mod h1:dwOEzjPlnKseqHJMQeTF5eyHwS+OtbQOWshqC9JMEuI=
 toolman.org/time/timetool v1.1.0 h1:/Py2Fl4P7iUefqTOrjSNL2chFfiZ+AQGSj9RGU+L2DY=
