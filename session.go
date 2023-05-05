@@ -22,6 +22,7 @@ package passwd // import "toolman.org/security/tools/passwd"
 import (
 	"errors"
 	"fmt"
+	"io"
 	"os"
 	"sync"
 	"syscall"
@@ -32,6 +33,18 @@ import (
 
 	"toolman.org/time/timetool"
 )
+
+var PromptWriter io.Writer = os.Stderr
+
+func Prompt(p string) (string, error) {
+	if p == "" {
+		p = Prompts.Get
+	}
+
+	ps := &PromptSet{Get: p}
+	pwd, err := ps.GetPass()
+	return string(pwd), err
+}
 
 var mx sync.Mutex
 
@@ -171,7 +184,7 @@ func (s *session) getPass(p string) ([]byte, error) {
 		err  error
 	)
 
-	fmt.Print(p)
+	fmt.Fprint(PromptWriter, p)
 
 	timetool.RetryWithBackoffDuration(50*time.Millisecond, 3, func(i int) bool {
 		if pass, err = terminal.ReadPassword(int(s.stdin.Fd())); err == syscall.EAGAIN {
@@ -180,7 +193,7 @@ func (s *session) getPass(p string) ([]byte, error) {
 		return true
 	})
 
-	fmt.Print("\n")
+	fmt.Fprint(PromptWriter, "\n")
 
 	return pass, err
 }
@@ -218,7 +231,7 @@ func (s *session) newPass(p1, p2 string) ([]byte, error) {
 			msg += " (Press <Enter> twice to abort)"
 		}
 
-		fmt.Printf("\a\n%s\n\n\a", msg)
+		fmt.Fprintf(PromptWriter, "\a\n%s\n\n\a", msg)
 	}
 
 	if len(pass) == 0 {
